@@ -11,8 +11,53 @@
     <script>
         // Get computer option
         function computeChoice() {
-            let
+            let choices = ["rock", "paper", "scissors"];
+            let random = Math.floor((Math.random() * choices.length));
+            let randomChoice = choices[random];
+            return randomChoice
         }
+
+        // Prompt player for their input
+        function playerChoice() {
+            let playerChose = prompt("What's your move? ");
+            return playerChose.toLowerCase()
+        }
+
+        // Decide whether the computer or player wins
+        function playRound(computerSelection, playerSelection) {
+            if (computerSelection == 'rock' && playerSelection == 'paper') {
+                return console.log('You Win!')
+            } else if (computerSelection == 'rock' && playerSelection == 'scissors') {
+                return console.log('You Lose!')
+            } else if (computerSelection == 'paper' && playerSelection == 'scissors') {
+                return console.log('You Win!')
+            } else if (computerSelection == 'paper' && playerSelection == 'rock') {
+                return console.log('You Lose!')
+            } else if (computerSelection == 'scissors' && playerSelection == 'rock') {
+                return console.log('You Win!')
+            } else if (computerSelection == 'scissors' && playerSelection == 'paper') {
+                return console.log('You Lose!')
+            } else if (computerSelection == playerSelection) {
+                return console.log('Tie!')
+            } else {
+                return console.log('Invalid! Please choose rock, paper, or scissors!')
+            }
+        }
+
+        // Play 5 rounds
+        function playFive() {
+            for(let i = 0; i <= 4; i++) {
+                let playerSelection = playerChoice();
+                let computerSelection = computeChoice();
+                console.log(playRound(computerSelection, playerSelection));
+            }
+        }
+
+
+            // Declare inputs and output victory message
+            // let playerSelection = playerChoice();
+            // let computerSelection = computeChoice();
+            // console.log(playRound(computerSelection, playerSelection));
     </script>
 </body>
 </html>
