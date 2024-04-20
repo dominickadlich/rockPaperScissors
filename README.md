@@ -1,0 +1,3 @@
+My first JavaScript project...
+ROCK PAPER SCISSORS
+LFG
